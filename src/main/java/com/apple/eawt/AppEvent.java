@@ -1,5 +1,9 @@
 package com.apple.eawt;
 
+import java.awt.Window;
+
+import java.io.File;
+
 import java.net.URI;
 import java.util.EventObject;
 import java.util.List;
@@ -21,12 +25,15 @@ public abstract class AppEvent extends EventObject {
 
     public static class QuitEvent extends AppEvent {}
     public static class ScreenSleepEvent extends AppEvent {}
+    public static class FullScreenEvent extends AppEvent {
+    		public Window getWindow() {return null;}
+    }
     public static class SystemSleepEvent extends AppEvent {}
     public static class UserSessionEvent extends AppEvent {}
 
     public static class FilesEvent extends AppEvent {
         @SuppressWarnings("rawtypes")
-		public List getFiles() {return null;}
+        public List<File> getFiles() {return null;}
     }
     public static class PrintFilesEvent extends FilesEvent {}
     public static class OpenFilesEvent extends FilesEvent {

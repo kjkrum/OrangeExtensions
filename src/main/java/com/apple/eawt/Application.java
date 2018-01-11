@@ -3,6 +3,7 @@ package com.apple.eawt;
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.PopupMenu;
+import java.awt.Window;
 
 import javax.swing.JMenuBar;
 
@@ -109,6 +110,11 @@ public class Application {
      * @since 10.6 Update 1 and 10.5 Update 5 
      */
     public void requestUserAttention(boolean critical) {}
+
+    /** 
+     * @since 1.3.1 
+     */
+    public void requestToggleFullScreen(Window window) {}
 
     /** 
      * @since 10.6 Update 1 and 10.5 Update 5 
